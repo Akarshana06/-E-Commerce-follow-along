@@ -1,16 +1,26 @@
-const express = require("express");
-const cors = require("cors");
-require("dotenv").config();
-
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.send("Backend is running!");
+const app = require("./app");
+const connectDatabase =require("./db/Database");
+process.on("uncaughtException", (err) => {
+    console.log(`Error: ${err.message}`);
+    console.log(`shutting down the server for handling uncaught exception`);
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+if(process.env.NODE_ENV !== "PRODUCTION") {
+    require("dotenv").config({
+        path: "config/.env",
+    });
+};
+connectDatabase();
+const server = app.listen(process.env.PORT, () => {
+    console.log(
+        `Server is running on http://localhost:${process.env.PORT}`
+    );
+});
+process.on("unhandledRejection",(err) => {
+    console.error(`Unhandled Rejection: ${err.message}`);
+    console.log("Shutting down the server due to unhandle promise rejection."); 
+
+    server.close(() =>{
+        process.exit(1);
+    });
 });
