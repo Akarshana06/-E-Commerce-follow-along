@@ -54,7 +54,7 @@ The main feature developed in this milestone is the Login Page:
 
 Set up dedicated folders for organizing backend code effectively. Initialized and configured a Node.js server to handle API requests. Connected the application to MongoDB to store and manage data. Implemented basic error handling to ensure smooth server operation.
 
-## 🌟  Milestone 4
+## 🌟  Milestone 4:
 
 created a User Model to define how user data is structured in the database also developed a User Controller to manage user interactions, like adding or retrieving data. Additionally, configured Multer to handle file uploads, allowing users to store files such as images.
 
@@ -63,3 +63,5 @@ In this milestone, I built the Sign-Up page for user registration using HTML and
 
 ## 🌟  Milestone 6:
 In this milestone, I created a backend signup API that securely stores user data. Passwords are encrypted using bcrypt before saving to MongoDB. The API ensures secure user authentication and data privacy. All changes are committed and pushed.
+## 🌟  Milestone 7:
+In this milestone, we completed user login authentication by validating credentials and comparing encrypted passwords using bcrypt. This process involves retrieving user data, hashing the entered password, and matching it with the stored hash. If authenticated, access is granted; otherwise, an error is returned. This enhances security and protects user data.
