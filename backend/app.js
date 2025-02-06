@@ -16,6 +16,8 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
     });
 };
 const user = require("./controller/user");
+const productRoutes = require("./controller/product")
 app.use("/api/v2/user", user);
+app.use("/api/products", productRoutes);
 app.use(ErrorHandler);
 module.exports = app;
