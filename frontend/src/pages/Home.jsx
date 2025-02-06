@@ -1,4 +1,5 @@
 import Product from '../componenets/Products/Product';
+
 const productDetails = [
     {
       name: "Product 1",
@@ -58,17 +59,18 @@ const productDetails = [
       name: "Product 10",
       image: "https://media.istockphoto.com/id/1319625327/photo/shopping-basket-full-of-variety-of-grocery-products-food-and-drink-on-yellow-background.jpg?s=612x612&w=0&k=20&c=GHyTjlkoFweJnbAadmn4tzEYvfiB73MTe93KMT3GIM0=",
       description: "Description of product 10",
-      price: 1000,
-    },
+      price: 1000,
+    },
   ];
-  export default function Home()
-{
-    return(
-        <div className="w-full min-h-screen bg-neutral-800">
-            <div className="grid grid-cols-5 gap-4 p-4">
-                {productDetails.map((product,index)=><Product key={index} {...product}/>)}
+
+export default function Home() {
+    return (
+        <div className='w-full min-h-screen bg-neutral-800'>
+            <div className='grid grid-cols-5 gap-4 p-4'>
+                {productDetails.map((product, index) => (
+                    <Product key={index} {...product} />
+                ))}
             </div>
         </div>
-    )
+    );
 }
-
