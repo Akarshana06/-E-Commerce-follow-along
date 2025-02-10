@@ -9,7 +9,7 @@
 //     );
 // };
 import React from 'react'
-import Signup from "../componenets/signup/Signup"
+import Signup from "../components/signup/Signup"
 
 const SignupPage = () => {
   return (
