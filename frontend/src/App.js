@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from './pages/LoginPage';  
 import SignUpPage from './pages/SignupPage';
 import Home from './pages/Home';
-import CreateProduct from "./pages/createProduct";
-import MYProducts from "./pages/MYproducts";
+import CreateProduct from "./pages/createProduct"
+import MyProducts from './pages/myProduct';
 import "./App.css";
 
 const App = () => {
@@ -14,8 +14,10 @@ const App = () => {
       <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/createProduct" element={<CreateProduct />} />
-        <Route path="/MYproducts" element={<MYProducts/>} />
+        <Route path='/myProduct' element={<MyProducts/>} />
+        <Route path="/createProduct" element={<CreateProduct />} 
+  
+        />
       </Routes>
     </BrowserRouter>
   );
